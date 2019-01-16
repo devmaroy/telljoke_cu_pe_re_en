@@ -1,7 +1,7 @@
-*****
+Tell Joke
 =======================
 
-***** project. Based on react, flexbox layout, html5 and modern css3 principes.
+Tell joke project. Based on react, flexbox layout, html5 and modern css3 principes.
 
 This project is used as a little demonstration of my skills and for evolving my knowledge as a full stack web developer.
 
@@ -11,7 +11,7 @@ For any questions feel free to contact me at me@mwardew.com
 
 <br />
 
-### Demo:  https://*****.mwardew.com/
+### Demo:  https://telljoke.mwardew.com/
 
 <br />
 
@@ -20,8 +20,8 @@ For any questions feel free to contact me at me@mwardew.com
 Requirements
 ============
 
-* React >= *****
-* ReactDOM >= *****
+* React >= 16.0.0
+* ReactDOM >= 16.0.0
 
 ... see package.json
 
