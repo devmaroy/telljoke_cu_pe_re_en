@@ -1,13 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './Header';
+import Footer from './Footer';
 import HomePage from './HomePage';
+import AboutPage from './AboutPage';
+import ContactPage from './ContactPage';
 import EditJoke from './EditJoke';
 import RemoveJoke from './RemoveJoke';
+import JokeModal from './JokeModal';
 
 export default class TellJokeApp extends React.Component {
     state = {
-        jokes: []
+        jokes: [],
+        selectedJoke: undefined
     };
 
     componentDidMount() {
@@ -37,9 +42,11 @@ export default class TellJokeApp extends React.Component {
         const randomNum = Math.floor( Math.random() * this.state.jokes.length );
         const joke = this.state.jokes[ randomNum ];
 
-        if ( joke ) {
-            alert( joke );
-        }
+        this.setState( () => ( { selectedJoke: joke } ) );
+    };
+
+    handleClearSelectedJoke = () => {
+        this.setState( () => ( { selectedJoke: undefined } ) );
     };
 
     handleAddJoke = ( joke ) => {
@@ -77,6 +84,10 @@ export default class TellJokeApp extends React.Component {
         });
     };
 
+    handleRemoveJokes = () => {
+       this.setState( () => ( { jokes: [] } ) ); 
+    };
+
     render() {
         return (
             <BrowserRouter>
@@ -90,8 +101,19 @@ export default class TellJokeApp extends React.Component {
                                 jokes={ this.state.jokes }
                                 handlePickJoke={ this.handlePickJoke }
                                 handleAddJoke={ this.handleAddJoke }
+                                handleRemoveJokes={ this.handleRemoveJokes }
                                 { ...props }
                             />}
+                        />
+                        <Route 
+                            path="/about" 
+                            component={ AboutPage }
+                            />
+                        />
+                        <Route 
+                            path="/contact" 
+                            component={ ContactPage }
+                            />
                         />
                         <Route 
                             path="/edit/:id" 
@@ -108,6 +130,11 @@ export default class TellJokeApp extends React.Component {
                             />}
                         />
                     </Switch>
+                    <Footer />
+                    <JokeModal
+                        selectedJoke={ this.state.selectedJoke }
+                        handleClearSelectedJoke={ this.handleClearSelectedJoke }
+                    />
                 </div>
             </BrowserRouter>
         );

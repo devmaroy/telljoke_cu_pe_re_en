@@ -5,7 +5,7 @@ import Jokes from './Jokes';
 
 const HomePage = ( props ) => (
     <div>
-        <h1>Welcome</h1>
+        { props.jokes.length === 0 && <p>Plese add jokes to get started!</p> }
         <Action 
             handlePickJoke={ props.handlePickJoke }
         />
@@ -14,6 +14,7 @@ const HomePage = ( props ) => (
         />
         <Jokes 
             jokes={ props.jokes } 
+            handleRemoveJokes={ props.handleRemoveJokes }
         />
     </div>
 );
