@@ -1,8 +1,12 @@
 import React from 'react';
 
-const Action = () => (
+const Action = ( props ) => (
     <div>
-        <button>Tell me joke! (random)</button>
+        <button
+            onClick={ props.handlePickJoke }
+        >
+            Tell me joke! (random)
+        </button>
     </div>
 );
 

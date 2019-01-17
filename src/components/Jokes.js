@@ -6,7 +6,7 @@ const Jokes = ( props ) => (
         {
             props.jokes.map( ( joke, index ) => (
                 <Joke 
-                    key={ joke } 
+                    key={ joke }
                     jokeText={ joke } 
                     jokeIndex={ index + 1 }
                 />

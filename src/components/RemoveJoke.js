@@ -1,9 +1,19 @@
 import React from 'react';
 
-const RemoveJoke = ( props ) => (
-    <div>
-        <h1>Removing Joke with id: { props.match.params.id }</h1>
-    </div>
-);
-
-export default RemoveJoke;
+export default class RemoveJoke extends React.Component {
+    handleRemoveJoke = () => {
+        const jokeToRemove = this.props.location.state.jokeText;
+        this.props.handleRemoveJoke( jokeToRemove );
+        this.props.history.push( '/' );
+    };
+    
+    render() {
+        return (
+            <div>
+                <h1>Removing Joke</h1>
+                <p>{ this.props.location.state.jokeText }</p>
+                <button onClick={ this.handleRemoveJoke }>Remove</button>
+            </div>
+        );
+    }
+}
