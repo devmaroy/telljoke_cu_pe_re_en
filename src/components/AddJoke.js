@@ -30,17 +30,18 @@ export default class Jokes extends React.Component {
 
     render() {
         return (
-            <div>
-                { this.state.error && <p>{ this.state.error }</p> }
-                <form onSubmit={ this.handleOnSubmit }>
+            <div className="add-joke">
+                { this.state.error && <p className="add-joke-error">{ this.state.error }</p> }
+                <form className="form" onSubmit={ this.handleOnSubmit }>
                     <textarea 
+                        className="form__textarea"
                         rows="4" 
                         ref="joke"
                         autoFocus
                         onKeyDown={ this.handleOnEnterPress }
                     >
                     </textarea>
-                    <button>Add Joke</button>
+                    <button className="button form__button">Add Joke</button>
                 </form>
             </div>
         );

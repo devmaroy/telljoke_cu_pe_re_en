@@ -1,6 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class RemoveJoke extends React.Component {
+    componentDidMount() {
+        const id = this.props.match.params.id;
+
+        if ( ! this.props.getJokeById( id ) ) {
+            this.props.history.push( '/not-found' );
+        }
+    }
+
     handleRemoveJoke = () => {
         const jokeToRemove = this.props.location.state.jokeText;
         this.props.handleRemoveJoke( jokeToRemove );
@@ -9,10 +18,17 @@ export default class RemoveJoke extends React.Component {
     
     render() {
         return (
-            <div>
-                <h1>Removing Joke</h1>
-                <p>{ this.props.location.state.jokeText }</p>
-                <button onClick={ this.handleRemoveJoke }>Remove</button>
+            <div className="manage">
+                <div className="container">
+                    <h1 className="manage__title">Removing Joke</h1>
+                    <blockquote className="manage__preview">
+                        { this.props.getJokeById( this.props.match.params.id ) }
+                    </blockquote>
+                    <div className="manage-controls">
+                        <Link to="/">Go back</Link>
+                        <button className="button manage-controls__button" onClick={ this.handleRemoveJoke }>Remove</button>
+                    </div>
+                </div>
             </div>
         );
     }

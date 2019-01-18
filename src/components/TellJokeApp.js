@@ -8,14 +8,18 @@ import ContactPage from './ContactPage';
 import EditJoke from './EditJoke';
 import RemoveJoke from './RemoveJoke';
 import JokeModal from './JokeModal';
+import NotFoundPage from './NotFoundPage';
 
 export default class TellJokeApp extends React.Component {
     state = {
+        loading: true,
         jokes: [],
         selectedJoke: undefined
     };
 
     componentDidMount() {
+        this.setState( { loading: false } );
+
         try {
             const json = localStorage.getItem( 'jokes' );
             const jokes = JSON.parse( json );
@@ -88,7 +92,17 @@ export default class TellJokeApp extends React.Component {
        this.setState( () => ( { jokes: [] } ) ); 
     };
 
+    getJokeById = ( id ) => {
+        return this.state.jokes[ id - 1 ];
+    };
+
     render() {
+        const loading = this.state.loading;
+
+        if ( loading ) {
+            return null;
+        }
+
         return (
             <BrowserRouter>
                 <div>
@@ -119,6 +133,7 @@ export default class TellJokeApp extends React.Component {
                             path="/edit/:id" 
                             component={( props ) => <EditJoke
                                 handleEditJoke={ this.handleEditJoke }
+                                getJokeById={ this.getJokeById }
                                 { ...props }
                             />}
                         />
@@ -126,8 +141,12 @@ export default class TellJokeApp extends React.Component {
                             path="/remove/:id" 
                             component={( props ) => <RemoveJoke
                                 handleRemoveJoke={ this.handleRemoveJoke }
+                                getJokeById={ this.getJokeById }
                                 { ...props }
                             />}
+                        />
+                        <Route 
+                            component={ NotFoundPage } 
                         />
                     </Switch>
                     <Footer />

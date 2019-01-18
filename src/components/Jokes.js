@@ -2,8 +2,8 @@ import React from 'react';
 import Joke from './Joke';
 
 const Jokes = ( props ) => (
-    <div>
-        <button onClick={ props.handleRemoveJokes }>Remove All</button>
+    <div className="jokes">
+        <button className="button button--link" onClick={ props.handleRemoveJokes }>Remove All</button>
         {
             props.jokes.map( ( joke, index ) => (
                 <Joke 

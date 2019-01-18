@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    # Manage
+\*------------------------------------*/
+
+.manage {
+    margin: $xl-size 0 0 0;
+    line-height: $l-size;
+}
+
+.manage__title {
+    margin: 0 0 $l-size 0;
+}
+
+.manage__preview {
+    background: $purple;
+    padding: $l-size;
+    margin: $l-size 0 0 0;
+    border-left: $s-size solid $pink;
+    cursor: not-allowed;
+}
+
+.manage-controls {
+    text-align: right;
+}
+
+.manage-controls__button {
+    margin: $l-size 0 0 $l-size;
+}

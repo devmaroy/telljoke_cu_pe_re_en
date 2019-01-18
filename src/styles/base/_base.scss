@@ -18,6 +18,8 @@ html {
 body {
     font-family: 'Roboto', sans-serif;
     font-size: $m-size;
+    background: $off-blue;
+    color: $white;
 }
 
 button {
@@ -26,4 +28,24 @@ button {
 
 button:disabled {
     cursor: default;
+}
+
+a {
+    color: $pink;
+    text-decoration: none;
+
+    transition: all 200ms ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: darken( $pink, 10% );
+    }
+}
+
+.is-active {
+    color: $pink !important;
+}
+
+.heart-icon {
+    color: $violet;
 }

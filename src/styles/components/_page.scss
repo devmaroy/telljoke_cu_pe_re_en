@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    # Page
+\*------------------------------------*/
+
+.page {
+    margin: $xl-size 0 0 0;
+    line-height: $l-size;
+}
+
+.page__title {
+    font-size: 5.8rem;
+    text-transform: uppercase;
+}
+
+.page__subtitle {
+    font-size: 3rem;
+}

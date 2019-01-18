@@ -1,0 +1,28 @@
+/*------------------------------------*\
+    # Header
+\*------------------------------------*/
+
+.header {
+    text-align: center;
+}
+
+.header__title {
+    font-family: 'Aleo', serif;
+    font-size: $xl-size;
+    text-shadow: .1rem .1rem .1rem #000, .3rem .3rem .5rem #000;
+    color: $yellow;
+}
+
+.header__nav-link {
+    text-decoration: none;
+    font-size: 2rem;
+    padding: $s-size;
+    color: $yellow;
+
+    transition: all 200ms ease-in-out;
+
+    &:hover,
+    &:focus {
+        color: $pink;
+    }
+}

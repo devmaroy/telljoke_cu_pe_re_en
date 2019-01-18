@@ -2,28 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Joke = ( props ) => (
-    <div>
-        <p>{ props.jokeText }</p>
-        <Link
-            to={{
-                pathname: `/edit/${ props.jokeIndex }`,
-                state: {
-                    jokeText: props.jokeText
-                }
-            }}
-        >
-            Edit
-        </Link>
-        <Link
-            to={{
-                pathname: `/remove/${ props.jokeIndex }`,
-                state: {
-                    jokeText: props.jokeText
-                }
-            }}
-        >
-            Remove    
-        </Link>
+    <div className="joke">
+        <p className="joke__text">{ props.jokeText }</p>
+
+        <div className="joke-controls">
+            <Link
+                className="button button--link joke-controls__button"
+                to={{
+                    pathname: `/edit/${ props.jokeIndex }`,
+                    state: {
+                        jokeText: props.jokeText
+                    }
+                }}
+            >
+                edit
+            </Link>
+            <Link
+                className="button button--link joke-controls__button"
+                to={{
+                    pathname: `/remove/${ props.jokeIndex }`,
+                    state: {
+                        jokeText: props.jokeText
+                    }
+                }}
+            >
+                &times;    
+            </Link>
+        </div>
     </div>
 );
 

@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    # Button
+\*------------------------------------*/
+
+.big-button {
+    border: none;
+    outline: none;
+    padding: $l-size $xl-size;
+    background: $purple;
+    color: $pink;
+    border-bottom: .4rem solid $pink;
+    box-shadow: 0 .3rem .6rem rgba( 0, 0, 0, 0.16 ), 0 .3rem .6rem rgba( 0, 0, 0, 0.23 );
+    text-transform: uppercase;
+
+    transition: all 200ms ease-in-out;
+
+    &:hover,
+    &:focus {
+        background: darken( $purple, 10% );
+    }
+}
+
+.button {
+    border: none;
+    outline: none;
+    background: $purple;
+    padding: $s-size;
+    color: $pink;
+    box-shadow: 0 .3rem .6rem rgba( 0, 0, 0, 0.16 ), 0 .3rem .6rem rgba( 0, 0, 0, 0.23 );
+    border-bottom: .2rem solid $pink;
+
+    transition: all 200ms ease-in-out;
+
+    &:hover,
+    &:focus {
+        background: darken( $purple, 10% );
+    }
+}
+
+.button--link {
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: $violet;
+
+    &:hover,
+    &:focus {
+        background: none;
+        color: darken( $violet, 10% );
+    }
+}
