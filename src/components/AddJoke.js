@@ -1,7 +1,9 @@
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 export default class Jokes extends React.Component {
     state = {
+        focus: true,
         error: undefined
     };
 
@@ -19,12 +21,14 @@ export default class Jokes extends React.Component {
     handleOnSubmit = ( e ) => {
         e.preventDefault();        
         this.handleAddJoke();
+        this.resetFocus();
     };
 
     handleOnEnterPress = ( e ) => {
         if ( e.keyCode == 13 && e.shiftKey == false ) { 
             e.preventDefault();
             this.handleAddJoke();
+            this.resetFocus();
         }
     };
 
@@ -37,12 +41,13 @@ export default class Jokes extends React.Component {
                         className="form__textarea"
                         rows="4" 
                         ref="joke"
-                        autoFocus
+                        autoFocus={ this.setFocus }
                         onKeyDown={ this.handleOnEnterPress }
                     >
                     </textarea>
                     <button className="button form__button">Add Joke</button>
                 </form>
+                <h1>Je toto mobil?: { isMobile.toString() }</h1>
             </div>
         );
     };
