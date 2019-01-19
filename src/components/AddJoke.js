@@ -41,7 +41,7 @@ export default class Jokes extends React.Component {
                         className="form__textarea"
                         rows="4" 
                         ref="joke"
-                        autoFocus={ this.setFocus }
+                        autoFocus={ !isMobile }
                         onKeyDown={ this.handleOnEnterPress }
                     >
                     </textarea>
