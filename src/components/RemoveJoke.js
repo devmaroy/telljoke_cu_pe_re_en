@@ -13,7 +13,7 @@ export default class RemoveJoke extends React.Component {
     handleRemoveJoke = () => {
         const jokeToRemove = this.props.location.state.jokeText;
         this.props.handleRemoveJoke( jokeToRemove );
-        this.props.history.push( '/' );
+        this.props.history.push( '/', { message: 'Joke was removed!' } );
     };
     
     render() {
@@ -21,8 +21,8 @@ export default class RemoveJoke extends React.Component {
             <div className="manage">
                 <div className="container">
                     <h1 className="manage__title">Removing Joke</h1>
-                    <blockquote className="manage__preview">
-                        { this.props.getJokeById( this.props.match.params.id ) }
+                    <blockquote className="manage-preview">
+                        <p className="manage-preview__text">{ this.props.getJokeById( this.props.match.params.id ) }</p>
                     </blockquote>
                     <div className="manage-controls">
                         <Link to="/">Go back</Link>

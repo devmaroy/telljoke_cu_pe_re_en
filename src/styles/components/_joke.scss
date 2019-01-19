@@ -3,27 +3,41 @@
 \*------------------------------------*/
 
 .joke {
-    display: flex;
-    justify-content: space-between;
-    margin: $l-size 0;
     padding: $l-size 0 $l-size 0;
     border-bottom: .1rem solid $violet;
 
     &:last-child {
-        border: none;
-        margin-bottom: 0;
         padding-bottom: 0;
+        border: none;
     }
 }
 
 .joke__text {
+    font-size: 2rem;
     line-height: $l-size;
-    word-break: break-all;
-    padding: 0;
-    margin: 0;
+    word-break: break-all; 
+}
+
+.joke-controls {
+    margin: $l-size 0 0 0;
 }
 
 .joke-controls__button {
-    padding-left: $l-size;
-    padding-right: 0;
+    padding-right: $m-size;
+}
+
+@media ( min-width: $desktop-breakpoint ) {
+    .joke {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .joke-controls {
+        margin: 0;
+    }
+
+    .joke-controls__button {
+        padding-right: 0;
+        padding-left: $l-size;
+    }
 }

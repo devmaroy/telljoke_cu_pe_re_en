@@ -16,6 +16,7 @@
     color: $violet;
     resize: vertical;
     line-height: $l-size;
+    box-shadow: 0 .3rem .6rem rgba( 0, 0, 0, 0.16 ), 0 .3rem .6rem rgba( 0, 0, 0, 0.23 );
 }
 
 .form__button {

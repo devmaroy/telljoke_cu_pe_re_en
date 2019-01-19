@@ -7,5 +7,7 @@
 }
 
 .add-joke-error {
-    color: red;
+    color: $pink;
+    font-style: italic;
+    padding: 0 0 $m-size $m-size;
 }

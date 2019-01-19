@@ -71,10 +71,8 @@ export default class TellJokeApp extends React.Component {
                 const jokes = [ ...prevState.jokes ];
                 jokes[ index ] = jokeToSet; 
 
-                console.log(jokeToEdit);
-                
                 return {
-                    jokes: jokes
+                    jokes
                 };
             });
         }

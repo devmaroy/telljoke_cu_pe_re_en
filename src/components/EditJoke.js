@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { isMobile } from 'react-device-detect';
 
 export default class EditJoke extends React.Component {
     componentDidMount() {
@@ -13,14 +14,20 @@ export default class EditJoke extends React.Component {
     handleEditJoke = () => {
         const jokeToEdit = this.props.location.state.jokeText;
         const jokeToSet = this.refs.jokeToSet.value;
-         
         this.props.handleEditJoke( jokeToEdit, jokeToSet );
-        this.props.history.push( '/' );
+        this.props.history.push( '/', { message: 'Joke was edited!' } );
     };
 
     handleOnSubmit = ( e ) => {
         e.preventDefault();
         this.handleEditJoke();
+    };
+
+    handleOnEnterPress = ( e ) => {
+        if ( e.keyCode == 13 && e.shiftKey == false ) { 
+            e.preventDefault();
+            this.handleEditJoke();
+        }
     };
 
     render() {
@@ -33,7 +40,9 @@ export default class EditJoke extends React.Component {
                             className="form__textarea"
                             rows="4"
                             ref="jokeToSet"
+                            autoFocus={ !isMobile }
                             defaultValue={ this.props.getJokeById( this.props.match.params.id ) }
+                            onKeyDown={ this.handleOnEnterPress }
                         >
                         </textarea>
                         <div className="manage-controls">

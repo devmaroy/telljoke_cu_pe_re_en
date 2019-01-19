@@ -12,7 +12,7 @@ const JokeModal = ( props ) => (
         <h3 className="modal__title">Joke:</h3>
         { props.selectedJoke && <p className="modal__body">{ props.selectedJoke }</p> }
         <button 
-            className="button button--link"
+            className="button button--link modal__button"
             onClick={ props.handleClearSelectedJoke }
         >
             Close
