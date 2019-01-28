@@ -6,6 +6,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300i,400,700|Staatliches&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Aleo:700&subset=latin-ext');
 
+$font-family-serif: 'Aleo', serif;
+
 // Colors
 $off-blue: #724CF9;
 $purple: #564592;
@@ -22,3 +24,8 @@ $xl-size: 8.8rem;
 
 // Breakpoints
 $desktop-breakpoint: 50rem;
+
+// Other
+$box-shadow: 0 .3rem .6rem rgba( 0, 0, 0, 0.16 ), 0 .3rem .6rem rgba( 0, 0, 0, 0.23 );
+$transition: all 200ms ease-in-out;
+$text-shadow: .1rem .1rem .1rem #000, .3rem .3rem .5rem #000;

@@ -2,15 +2,15 @@
     # Button
 \*------------------------------------*/
 
-.big-button {
+.button {
     border: none;
     outline: none;
-    padding: $l-size $xl-size;
+    display: inline-block;
     background: $purple;
     color: $pink;
-    border-bottom: .4rem solid $pink;
-    box-shadow: 0 .3rem .6rem rgba( 0, 0, 0, 0.16 ), 0 .3rem .6rem rgba( 0, 0, 0, 0.23 );
-    text-transform: uppercase;
+    box-shadow: $box-shadow;
+    padding: $s-size;
+    border-bottom: .2rem solid $pink;
 
     transition: all 200ms ease-in-out;
 
@@ -20,22 +20,10 @@
     }
 }
 
-.button {
-    border: none;
-    outline: none;
-    //display: inline-block;
-    background: $purple;
-    padding: $s-size;
-    color: $pink;
-    box-shadow: 0 .3rem .6rem rgba( 0, 0, 0, 0.16 ), 0 .3rem .6rem rgba( 0, 0, 0, 0.23 );
-    border-bottom: .2rem solid $pink;
-
-    transition: all 200ms ease-in-out;
-
-    &:hover,
-    &:focus {
-        background: darken( $purple, 10% );
-    }
+.big-button {
+    padding: $l-size $xl-size;
+    border-bottom: .4rem solid $pink;
+    text-transform: uppercase;
 }
 
 .button--link {

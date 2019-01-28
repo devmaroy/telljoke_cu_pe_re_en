@@ -3,7 +3,7 @@ import React from 'react';
 const Action = ( props ) => (
     <div className="action">
         <button
-            className="big-button"
+            className="button big-button"
             onClick={ props.handlePickJoke }
         >
             Tell me a joke!

@@ -10,16 +10,15 @@
     border: none;
     outline: none;
     width: 100%;
-    background: $white;
-    border: .4rem solid $violet;
     padding: $l-size;
-    color: $violet;
-    resize: vertical;
     line-height: $l-size;
-    box-shadow: 0 .3rem .6rem rgba( 0, 0, 0, 0.16 ), 0 .3rem .6rem rgba( 0, 0, 0, 0.23 );
+    resize: vertical;
+    border: .4rem solid $violet;
+    background: $white;
+    box-shadow: $box-shadow;
+    color: $violet;
 }
 
 .form__button {
     margin: $l-size 0 0 0;
 }
-

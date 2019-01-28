@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 200ms ease-in-out;
+    transition: $transition;
 }
 
 .ReactModalPortal .ReactModal__Overlay--after-open {
@@ -24,9 +24,9 @@
 .modal {
     outline: none;
     max-width: 36rem;
+    padding: $l-size;
     background: $purple;
     color: $white;
-    padding: $l-size;
 }
 
 .modal__body {

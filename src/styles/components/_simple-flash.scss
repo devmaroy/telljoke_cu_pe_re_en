@@ -3,10 +3,10 @@
 \*------------------------------------*/
 
 .flash-message {
-    background: $violet;
-    padding: $l-size;
     margin: 0 0 $l-size 0;
+    padding: $l-size;
     font-weight: 300;
     font-style: italic;
-    box-shadow: 0 .3rem .6rem rgba( 0, 0, 0, 0.16 ), 0 .3rem .6rem rgba( 0, 0, 0, 0.23 );
+    background: $violet;
+    box-shadow: $box-shadow;
 }
