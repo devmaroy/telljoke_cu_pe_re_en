@@ -60,7 +60,7 @@ A quick look at the top-level files and directories you'll see in my Gatsby proj
 
 <br />
 
-## 🔗 Live Example - [https://telljoke-mmproj.netlify.com/](https://telljoke-mmproj.netlify.com/)
+## 🔗 Live Example - [https://telljoke-mmproj.netlify.app//](https://telljoke-mmproj.netlify.app//)
 
 <br />
 <br />
