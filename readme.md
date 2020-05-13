@@ -59,7 +59,6 @@ A quick look at the top-level files and directories you'll see in my project.
     ├── screenshot.png
     ├── webpack.config.js
     ├── postcss.config.js
-    ├── yarn.lock
     └── readme.md
 
 <br>
@@ -84,9 +83,7 @@ A quick look at the top-level files and directories you'll see in my project.
 
 10. **`postcss.config.js`**: Configuration file for PostCSS
 
-11. **`yarn.lock`**: There is an identifier for every dependency and sub dependency that is used for a project.
-
-12. **`readme.md`**: A text file containing useful reference information about project.
+11. **`readme.md`**: A text file containing useful reference information about project.
 
 
 <br>
